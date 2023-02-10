@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 //mongoose mongodb url
-mongoose.connect("mongodb://127.0.0.1/data", {
+mongoose.connect("mongodb+srv://admin:admin@cluster0.qpborbx.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
