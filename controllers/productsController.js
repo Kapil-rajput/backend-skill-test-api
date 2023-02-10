@@ -39,6 +39,6 @@ module.exports.update = async function (req, res) {
     const result = await product.save();
     res.send({ product: result, message: 'Updated successfully' });
   } catch (error) {
-    res.status(500).send(error);
+    console.log(error);
   }
 };
