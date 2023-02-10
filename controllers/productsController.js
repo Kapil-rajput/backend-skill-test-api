@@ -7,20 +7,28 @@ module.exports.create = async function (req, res) {
   });
   try {
     const saveProduct = await product.save();
-      res.json(saveProduct);
-      console.log(savedProduct)
+    res.json(saveProduct);
   } catch (error) {
-    res.json({
-      message: "Unable To Create Data",
-    });
+    console.log(error);
   }
 };
+
 module.exports.display = async function (req, res) {
-  res.send("Display all post");
+  try {
+    const products = await Product.find();
+      res.json({ products: products });
+  } catch (error) {
+    console.log(error);
+  }
 };
 module.exports.delete = async function (req, res) {
-  res.send("delete post");
+  try {
+    const productDelete = await Product.deleteOne({ _id: req.params.id });
+      res.send({ message: "Product deleted" });
+  } catch (error) {
+    console.log(error);
+  }
 };
 module.exports.update = async function (req, res) {
-  res.send("Update post");
+  
 };
