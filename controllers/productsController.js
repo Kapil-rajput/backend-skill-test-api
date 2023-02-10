@@ -30,5 +30,9 @@ module.exports.delete = async function (req, res) {
   }
 };
 module.exports.update = async function (req, res) {
+try {
+    const product = await Product.findByIdAndUpdate({_id:req.params.id})
+} catch (error) {
   
+}
 };
